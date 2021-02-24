@@ -49,3 +49,9 @@ plt.ylabel("Temperature (F)", fontsize=12)
 plt.tick_params(axis="both", which="major", labelsize=12)
 
 plt.show()
+
+fig2, a = plt.subplots(2)
+a[0].plt(dates,highs,c='red')
+a[1].plot(dates,lows,c='blue')
+
+plt.show()
