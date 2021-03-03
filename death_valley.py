@@ -8,7 +8,7 @@ header_row = next(csv_file)
 print(type(header_row))
 
 for index, column_header in enumerate(header_row):
-    print(index, column_header)
+    print("Index: ", index, "Column Name: ", column_header)
 
 
 
@@ -16,20 +16,12 @@ highs = []
 dates = []
 lows = []
 
-#this is an example
-
-mydate = '2018-07-01'
-converted_date = datetime.strptime(mydate,'%Y-%m-%d')
-
-print(converted_date)
-
-
 
 for row in csv_file:
     try:
-        high.append(int(row[4]))
-        low.append(int(row[5]))
-        converted_date = datetime.strptime(row[2],'%Y-%m-%d')
+        high = int(row[4])
+        low = int(row[5])
+        converted_date = datetime.strptime(row[2], "%Y-%m-%d")
     except ValueError:
         print(f"missing data for {converted_date}")
     else:
@@ -61,7 +53,7 @@ plt.tick_params(axis="both", which="major", labelsize=12)
 plt.show()
 
 fig2, a = plt.subplots(2)
-a[0].plt(dates,highs,c='red')
+a[0].plot(dates,highs,c='red')
 a[1].plot(dates,lows,c='blue')
 
 plt.show()
