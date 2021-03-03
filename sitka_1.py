@@ -38,6 +38,7 @@ fig=plt.figure()
 plt.plot(dates, highs, c="red")
 plt.plot(dates, lows, c ="blue")
 
+'''
 fig.autofmt_xdate()
 
 plt.fill_between(dates,highs,lows,facecolor='blue',alpha=0.1)
@@ -51,7 +52,9 @@ plt.tick_params(axis="both", which="major", labelsize=12)
 plt.show()
 
 fig2, a = plt.subplots(2)
-a[0].plt(dates,highs,c='red')
+a[0].plot(dates,highs,c='red')
 a[1].plot(dates,lows,c='blue')
+'''
 
 plt.show()
+
