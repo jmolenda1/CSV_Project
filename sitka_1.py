@@ -11,8 +11,6 @@ for index, column_header in enumerate(header_row):
     print(index, column_header)
 
 highs = []
-dates = []
-lows = []
 
 #this is an example
 '''
@@ -25,9 +23,6 @@ print(converted_date)
 
 for row in csv_file:
     highs.append(int(row[5]))
-    lows.append(int(row[6]))
-    converted_date = datetime.strptime(row[2],'%Y-%m-%d')
-    dates.append(converted_date)
 
 #print(highs)
 
@@ -35,8 +30,11 @@ import matplotlib.pyplot as plt
 
 fig=plt.figure()
 
-plt.plot(dates, highs, c="red")
-plt.plot(dates, lows, c ="blue")
+plt.plot(highs, c="red")
+plt.title("Daily High Temepratures July 2018", fontsize=16)
+plt.xlabel("", fontsize=16)
+plt.ylabel("Temeprature (F)", fontsize=16)
+plt.tick_params(axis="both", which='major', labelsize=16)
 
 
 plt.show()
