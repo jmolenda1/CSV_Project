@@ -7,6 +7,8 @@ open_files = ["sitka_weather_2018_simple.csv", "death_valley_2018_simple.csv"]
 smallnames = []
 i = 0
 
+fig, ax = plt.subplots(2)
+
 for name in open_files:
     open_file = open(name, "r")
     reader = csv.reader(open_file, delimiter=",")
@@ -25,8 +27,6 @@ for name in open_files:
     dates = []
     lows = []
     
-    fig, ax = plt.subplots(2)
-
     for row in reader:
         try: 
             high = int(row[high_index])
